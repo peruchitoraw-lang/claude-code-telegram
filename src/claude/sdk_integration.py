@@ -130,9 +130,10 @@ class StreamUpdate:
 class ClaudeSDKManager:
     """Manage Claude Code SDK integration."""
 
-    def __init__(self, config: Settings):
+    def __init__(self, config: Settings, security_validator=None):
         """Initialize SDK manager with configuration."""
         self.config = config
+        self.security_validator = security_validator
 
         # Try to find and update PATH for Claude CLI
         if not update_path_for_claude(config.claude_cli_path):

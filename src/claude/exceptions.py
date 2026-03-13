@@ -27,3 +27,7 @@ class ClaudeMCPError(ClaudeError):
     def __init__(self, message: str, server_name: str = None):
         super().__init__(message)
         self.server_name = server_name
+
+
+class ClaudeToolValidationError(ClaudeError):
+    """Tool validation failed."""
